@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # externally
 URL='https://github.com/gchq/CyberChef'
 LATEST='releases/latest/'
@@ -25,7 +24,10 @@ _sanity_checks() {
     fi
 
     # Ensure we have a cyberchef directory for unpacking zip-file to
-    if [ ! -d ${CYBERCHEFDIR} ]; then
+    if [ -d ${CYBERCHEFDIR} ]; then
+        rm -rf ${CYBERCHEFDIR}
+        mkdir ${CYBERCHEFDIR}
+    else
         mkdir ${CYBERCHEFDIR}
     fi
 
