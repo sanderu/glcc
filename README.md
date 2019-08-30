@@ -1,0 +1,2 @@
+# glcc
+Get latest CyberChef
