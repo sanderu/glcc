@@ -44,7 +44,7 @@ _unpack_cyberchef() {
 }
 
 _get_cyberchef() {
-    wget ${URL}/releases/download/${VERSION}/CyberChef_${VERSION}.zip -O ${CYBERCHEF} 2> /dev/null
+    wget -q ${URL}/releases/download/${VERSION}/CyberChef_${VERSION}.zip -O ${CYBERCHEF}
 }
 
 
@@ -55,7 +55,7 @@ _get_cyberchef() {
 _sanity_checks
 
 # Get html-page for the latest cyberchef release and grab the latest version number:
-wget ${URL}/${LATEST} -O ${TEMP_FILE} 2> /dev/null
+wget -q ${URL}/${LATEST} -O ${TEMP_FILE}
 VERSION=$( grep ${MATCH} ${TEMP_FILE} | sed -e 's_.*releases/tag/__g' | sed -e 's_".*__g' | tail -n1 )
 
 OLD_VERS=$( cat ${OLD_VERSION} )
