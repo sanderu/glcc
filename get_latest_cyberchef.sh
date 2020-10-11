@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Ensure programs exits on errors, unset variables used and last command error status in a pipe
+set -o errexit
+set -o nounset
+set -o pipefail
+
 # externally
 URL='https://github.com/gchq/CyberChef'
 LATEST='releases/latest/'
