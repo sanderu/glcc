@@ -61,7 +61,7 @@ _sanity_checks
 
 # Get html-page for the latest cyberchef release and grab the latest version number:
 wget -q ${URL}/${LATEST} -O ${TEMP_FILE}
-VERSION=$( grep ${MATCH} ${TEMP_FILE} | sed -e 's_.*releases/tag/__g' | sed -e 's_".*__g' | tail -n1 )
+VERSION=$( grep ${MATCH} ${TEMP_FILE} | sed -e 's_.*releases/tag/__g' | sed -e 's_".*__g' | head -n1 )
 
 OLD_VERS=$( cat ${OLD_VERSION} )
 
